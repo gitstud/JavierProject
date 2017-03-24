@@ -9,4 +9,16 @@ def portal(request):
 	return render(request, 'logisite/account.html')
 
 def validateAdmin(request):
-	return redirect('main:index')
+	print(request.POST['userEmail'])
+	try:
+		a = User.objects.get(admin_email=request.POST['userEmail'])
+	except:
+		return redirect('main:index')
+	if a.password == request.POST['userPassword']:
+		print('******************')
+	else:
+		print('################')
+	return redirect('main:b_dash')
+
+def b_dash(request):
+	return render(request, 'logisite/businessDashboard.html')
