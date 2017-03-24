@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>The Experts || Responsive HTML 5 Template</title> 
+
+    <!-- mobile responsive meta -->
+    {% load static %}
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'images/fav-icon/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" href="{% static 'images/fav-icon/favicon-32x32.png' %}" sizes="32x32">
+    <link rel="icon" type="image/png" href="{% static 'images/fav-icon/favicon-16x16.png' %}" sizes="16x16">
+
+</head>
+<body>
+
+<div class="boxed_wrapper">
+
+<div class="inner-banner text-center">
+    <div class="container">
+        <div class="box">
+            <h3>Admin Portal</h3>
+        </div><!-- /.box -->
+    </div><!-- /.container -->
+</div>
+
+<section class="register-section sec-padd-top">
+    <div class="container">
+        <div class="row">
+            
+            <!--Form Column-->
+            <div class="form-column column col-sm-8 col-sm-offset-2">
+            
+                <div class="section-title">
+                    <h3>Login Now</h3>
+                    <div class="decor"></div>
+                </div>
+                
+                <!--Login Form-->
+                <div class="styled-form login-form">
+                    <form method="post" action="{% url 'main:admin_validate' %}">
+                    {% csrf_token %}
+                        <div class="form-group">
+                            <span class="adon-icon"><span class="fa fa-envelope-o"></span></span>
+                            <input type="email" name="userEmail" value="" placeholder="Enter Email">
+                        </div>
+                        <div class="form-group">
+                            <span class="adon-icon"><span class="fa fa-unlock-alt"></span></span>
+                            <input type="password" name="userPassword" value="" placeholder="Enter Password">
+                        </div>
+                        <div class="clearfix">
+                            <div class="form-group pull-left">
+                                <button type="submit" class="thm-btn thm-tran-bg" value="submit" onclick="">login now</button>
+                            </div>
+                        </div>
+                        
+                    </form>
+                </div>
+                
+            </div>
+            
+            <!--Form Column--> 
+        </div>
+    </div>
+</section>
+
+<footer class="main-footer">
+     <!--Footer Bottom-->
+     <section class="footer-bottom">
+        <div class="container">
+            <div class="pull-left copy-text">
+                <p>Copyrights © 2017 All Rights Reserved. Powered by  <a href="/"> The Experts.</a></p>
+                
+            </div><!-- /.pull-right -->
+        </div><!-- /.container -->
+    </section>
+     
+</footer>
+
+<!-- Scroll Top Button -->
+    <button class="scroll-top tran3s color2_bg">
+        <span class="fa fa-angle-up"></span>
+    </button>
+    <!-- pre loader  -->
+    <div class="preloader"></div>
+
+
+    <!-- jQuery js -->
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <!-- bootstrap js -->
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <!-- jQuery ui js -->
+    <script src="{% static 'js/jquery-ui.js' %}"></script>
+    <!-- owl carousel js -->
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+    <!-- jQuery validation -->
+    <script src="{% static 'js/jquery.validate.min.js' %}"></script>
+
+    <!-- mixit up -->
+    <script src="{% static 'js/wow.js' %}"></script>
+    <script src="{% static 'js/jquery.mixitup.min.js' %}"></script>
+    <script src="{% static 'js/jquery.fitvids.js' %}"></script>
+    <script src="{% static 'js/bootstrap-select.min.js' %}"></script>
+    <script src="{% static 'js/menuzord.js' %}"></script>
+
+    <!-- revolution slider js -->
+    <script src="{% static 'js/jquery.themepunch.tools.min.js' %}"></script>
+    <script src="{% static 'js/jquery.themepunch.revolution.min.js' %}"></script>
+    <script src="{% static 'js/revolution.extension.actions.min.js' %}"></script>
+    <script src="{% static 'js/revolution.extension.carousel.min.js' %}"></script>
+    <script src="{% static 'js/revolution.extension.kenburn.min.js' %}"></script>
+    <script src="{% static 'js/revolution.extension.layeranimation.min.js' %}"></script>
+    <script src="{% static 'js/revolution.extension.migration.min.js' %}"></script>
+    <script src="{% static 'js/revolution.extension.navigation.min.js' %}"></script>
+    <script src="{% static 'js/revolution.extension.parallax.min.js' %}"></script>
+    <script src="{% static 'js/revolution.extension.slideanims.min.js' %}"></script>
+    <script src="{% static 'js/revolution.extension.video.min.js' %}"></script>
+
+    <!-- fancy box -->
+    <script src="{% static 'js/jquery.fancybox.pack.js' %}"></script>
+    <script src="{% static 'js/isotope.js' %}"></script>
+    <script src="{% static 'js/jquery.polyglot.language.switcher.js' %}"></script>
+    <script src="{% static 'js/nouislider.js' %}"></script>
+    <script src="{% static 'js/jquery.bootstrap-touchspin.js' %}"></script>
+    <script src="{% static 'js/SmoothScroll.js' %}"></script>
+    <script src="{% static 'js/jquery.appear.js' %}"></script>
+    <script src="{% static 'js/jquery.countTo.js' %}"></script>
+    <script src="{% static 'js/jquery.flexslider.js' %}"></script>
+    <script src="{% static 'js/imagezoom.js' %}"></script> 
+    <script src="js/bxslider.js' %}"></script> 
+    <script id="map-script" src="{% static 'js/default-map.js' %}"></script>
+    <script src="{% static 'js/custom.js' %}"></script>
+
+</div>
+    
+</body>
+</html>
