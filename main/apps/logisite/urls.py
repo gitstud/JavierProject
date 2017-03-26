@@ -3,7 +3,4 @@ from . import views
 
 urlpatterns = [
 	url(r'^$', views.index, name='index'),
-	url(r'^admin_portal', views.portal, name='admin_portal'),
-	url(r'^admin_login', views.validateAdmin, name='admin_validate'),
-	url(r'^business_dashboard', views.b_dash, name='b_dash'),
 ]

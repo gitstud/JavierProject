@@ -45,7 +45,7 @@
                 
                 <!--Login Form-->
                 <div class="styled-form login-form">
-                    <form method="post" action="{% url 'main:admin_validate' %}">
+                    <form method="post" action="{% url 'account:admin_validate' %}">
                     {% csrf_token %}
                         <div class="form-group">
                             <span class="adon-icon"><span class="fa fa-envelope-o"></span></span>
