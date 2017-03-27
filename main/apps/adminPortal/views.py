@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, reverse
 from models import User, SubCompany
 from pprint import pprint
 
@@ -22,11 +22,11 @@ def b_dash(request):
 	return render(request, 'adminPortal/businessDashboard.html')
 
 def cRegister(request):
-	print(request.POST['cname'])
-	print(request.POST['cemail'])
-	print(request.POST['cpass'])
-	print(request.POST['ccpass'])
-	print(request.POST['ctype'])
 	company = SubCompany(name=request.POST['cname'], email=request.POST['cemail'], password=request.POST['cpass'])
 	company.save()
-	return redirect('account:b_dash')
+	return redirect(reverse('account:registerContinued', args=(company.id,)))
+
+def cRegisterContinued(request, company):
+	a = SubCompany.objects.get(id=company)
+	context = {'company':a}
+	return render(request, 'adminPortal/cAccountC.html', context)
