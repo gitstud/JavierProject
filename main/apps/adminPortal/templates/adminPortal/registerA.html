@@ -59,34 +59,6 @@
                          </ul>
                             
                         </li>
-
-                        <li><a href="#">Projects</a>
-                        <ul class="dropdown">
-                            <li><a href="project-1.html">Projects 4 Columns</a></li>
-                            <li><a href="project-2.html">Projects 3 Columns</a></li>
-                            <li><a href="project-3.html">Projects 2 Columns</a></li>
-                            <li><a href="project-single.html">Single Project</a></li>
-                         </ul>
-                        </li>
-
-                        <li><a href="#">blog</a>
-                        <ul class="dropdown">
-                            <li><a href="blog-grid.html">Blog Grid View</a></li>
-                            <li><a href="blog-large.html">Blog With Sidebar</a></li>
-                            <li><a href="blog-details.html">Blog Single Post</a></li>
-                         </ul>
-                        </li>
-
-
-                        <li class="active"><a href="#">Shop</a>
-                        <ul class="dropdown">
-                            <li><a href="shop.html">Shop Products</a></li>
-                            <li><a href="shop-single.html">Product Detail Page</a></li>
-                            <li><a href="shop-cart.html">View Shopping Items</a></li>
-                            <li><a href="checkout.html">Checkout Your Page</a></li>
-                            <li><a href="account.html">Login or Register</a></li>
-                        </ul>
-                        </li>
                       
                         <li><a href="contact.html">Contact us</a></li>
                     </ul><!-- End of .menuzord-menu -->
@@ -117,20 +89,6 @@
         <div class="box">
             <h3>My Account</h3>
         </div><!-- /.box -->
-        <div class="breadcumb-wrapper">
-            <div class="clearfix">
-                <div class="pull-left">
-                    <ul class="list-inline link-list">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="shop.html">shop</a></li>
-                        <li>My Account</li>
-                    </ul>
-                </div>
-                <div class="pull-right">
-                    <a href="#" class="get-qoute"><i class="fa fa-share-alt"></i>share</a>
-                </div><!-- /.pull-right -->
-            </div><!-- /.container -->
-        </div>
     </div><!-- /.container -->
 </div>
 
@@ -182,7 +140,7 @@
                 
                 <!--Login Form-->
                 <div class="styled-form register-form">
-                    <form method="post" action="{% url 'account:register' %}">
+                    <form method="post" action="{% url 'account:registerA' %}">
                         {% csrf_token %}
                         <div class="form-group">
                             <span class="adon-icon"><span class="fa fa-user"></span></span>

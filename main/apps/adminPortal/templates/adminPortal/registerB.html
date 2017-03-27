@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>The Experts || Responsive HTML 5 Template</title> 
+
+    {% load static %}
+    <!-- mobile responsive meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'images/fav-icon/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" href="{% static 'images/fav-icon/favicon-32x32.png' %}" sizes="32x32">
+    <link rel="icon" type="image/png" href="{% static 'images/fav-icon/favicon-16x16.png' %}" sizes="16x16">
+
+ 
+
+</head>
+<body>
+
+<div class="boxed_wrapper">
+
+
+<div class="inner-banner text-center">
+    <div class="container">
+        <div class="box">
+            <h3>Welcome, {{company.name}}</h3>
+        </div><!-- /.box -->
+        <div class="breadcumb-wrapper">
+            <div class="clearfix">
+                <div class="pull-left">
+                    <ul class="list-inline link-list">
+                        <li>Company Information<a href="#"></a></li>
+                        <li><a href="#">Shipping Information</a></li>
+                        <li><a href="#">Link Accounts</a></li>
+                        <li style="color:black;">Review</li>
+                    </ul>
+                </div>
+                <div class="pull-right">
+                    <a href="#" class="get-qoute"><i class="fa fa-times"></i>Skip</a>
+                </div><!-- /.pull-right -->
+            </div><!-- /.container -->
+        </div>
+    </div><!-- /.container -->
+</div>
+
+
+
+
+<section class="register-section sec-padd-top">
+    <div class="container">
+        <div class="row">
+            
+            <!--Form Column-->
+            <div class="form-column column col-md-12 col-sm-12 col-xs-12">
+                
+                <!--Login Form-->
+                <div class="styled-form login-form">
+                        <form class="well form-horizontal" action="{% url 'account:registerC' company.id %}" method="post"  id="contact_form">
+                        {% csrf_token %}
+                    <fieldset>
+
+                    <!-- Form Name -->
+                    <legend>Contact Info</legend>
+
+                    <!-- Text input-->
+
+                    <div class="form-group">
+                      <label class="col-md-4 control-label">First Name</label>  
+                      <div class="col-md-4 inputGroupContainer">
+                      <div class="input-group">
+                      <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                      <input  name="first_name" placeholder="First Name" class="form-control"  type="text">
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Text input-->
+
+                    <div class="form-group">
+                      <label class="col-md-4 control-label" >Last Name</label> 
+                        <div class="col-md-4 inputGroupContainer">
+                        <div class="input-group">
+                      <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                      <input name="last_name" placeholder="Last Name" class="form-control"  type="text">
+                        </div>
+                      </div>
+                    </div>
+
+
+                    <!-- Text input-->
+                           
+                    <div class="form-group">
+                      <label class="col-md-4 control-label">Phone #</label>  
+                        <div class="col-md-4 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+                      <input name="phone" placeholder="(845)555-1212" class="form-control" type="text">
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Text input-->
+                          
+                    <div class="form-group">
+                      <label class="col-md-4 control-label">Address</label>  
+                        <div class="col-md-4 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+                      <input name="address" placeholder="Address" class="form-control" type="text">
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Text input-->
+                     
+                    <div class="form-group">
+                      <label class="col-md-4 control-label">City</label>  
+                        <div class="col-md-4 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+                      <input name="city" placeholder="city" class="form-control"  type="text">
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Select Basic -->
+                       
+                    <div class="form-group"> 
+                      <label class="col-md-4 control-label">State</label>
+                        <div class="col-md-4 selectContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+                        <select name="state" class="form-control selectpicker" >
+                          <option value=" " >Please select your state</option>
+                          <option>Alabama</option>
+                          <option>Alaska</option>
+                          <option >Arizona</option>
+                          <option >Arkansas</option>
+                          <option >California</option>
+                          <option >Colorado</option>
+                          <option >Connecticut</option>
+                          <option >Delaware</option>
+                          <option >District of Columbia</option>
+                          <option> Florida</option>
+                          <option >Georgia</option>
+                          <option >Hawaii</option>
+                          <option >daho</option>
+                          <option >Illinois</option>
+                          <option >Indiana</option>
+                          <option >Iowa</option>
+                          <option> Kansas</option>
+                          <option >Kentucky</option>
+                          <option >Louisiana</option>
+                          <option>Maine</option>
+                          <option >Maryland</option>
+                          <option> Mass</option>
+                          <option >Michigan</option>
+                          <option >Minnesota</option>
+                          <option>Mississippi</option>
+                          <option>Missouri</option>
+                          <option>Montana</option>
+                          <option>Nebraska</option>
+                          <option>Nevada</option>
+                          <option>New Hampshire</option>
+                          <option>New Jersey</option>
+                          <option>New Mexico</option>
+                          <option>New York</option>
+                          <option>North Carolina</option>
+                          <option>North Dakota</option>
+                          <option>Ohio</option>
+                          <option>Oklahoma</option>
+                          <option>Oregon</option>
+                          <option>Pennsylvania</option>
+                          <option>Rhode Island</option>
+                          <option>South Carolina</option>
+                          <option>South Dakota</option>
+                          <option>Tennessee</option>
+                          <option>Texas</option>
+                          <option> Uttah</option>
+                          <option>Vermont</option>
+                          <option>Virginia</option>
+                          <option >Washington</option>
+                          <option >West Virginia</option>
+                          <option>Wisconsin</option>
+                          <option >Wyoming</option>
+                        </select>
+                      </div>
+                    </div>
+                    </div>
+
+                    <!-- Text input-->
+
+                    <div class="form-group">
+                      <label class="col-md-4 control-label">Zip Code</label>  
+                        <div class="col-md-4 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+                      <input name="zip" placeholder="Zip Code" class="form-control"  type="text">
+                        </div>
+                    </div>
+                    </div>
+
+
+                    <!-- Button -->
+                    <div class="form-group">
+                      <label class="col-md-4 control-label"></label>
+                      <div class="col-md-4">
+                        <button type="submit" class="btn btn-primary" >Next</button>
+                      </div>
+                    </div>
+
+                </fieldset>
+                </form>
+                </div>
+                
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+
+     <!--Footer Bottom-->
+     <section class="footer-bottom">
+        <div class="container">
+            <div class="pull-left copy-text">
+                <p>Copyrights © 2017 All Rights Reserved. Powered by  <a href="#"> Connectly.</a></p>
+                
+            </div><!-- /.pull-right -->
+            <div class="pull-right get-text">
+                <ul>
+                    <li><a href="#">Support |  </a></li>
+                    <li><a href="#">Privacy &amp; Policy |</a></li>
+                    <li><a href="#"> Terms &amp; Conditions</a></li>
+                </ul>
+            </div><!-- /.pull-left -->
+        </div><!-- /.container -->
+    </section>
+     
+</footer>
+
+<!-- Scroll Top Button -->
+
+    <!-- pre loader  -->
+    <div class="preloader"></div>
+
+
+    <!-- jQuery js -->
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <!-- bootstrap js -->
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <!-- jQuery ui js -->
+    <script src="{% static 'js/jquery-ui.js' %}"></script>
+    <!-- owl carousel js -->
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+    <!-- jQuery validation -->
+    <script src="{% static 'js/jquery.validate.min.js' %}"></script>
+
+    <!-- mixit up -->
+    <script src="{% static 'js/wow.js' %}"></script>
+    <script src="{% static 'js/jquery.mixitup.min.js' %}"></script>
+    <script src="{% static 'js/jquery.fitvids.js' %}"></script>
+    <script src="{% static 'js/bootstrap-select.min.js' %}"></script>
+    <script src="{% static 'js/menuzord.js' %}"></script>
+
+    <!-- revolution slider js -->
+    <script src="{% static 'js/jquery.themepunch.tools.min.js' %}"></script>
+    <script src="{% static 'js/jquery.themepunch.revolution.min.js' %}"></script>
+    <script src="{% static 'js/revolution.extension.actions.min.js' %}"></script>
+    <script src="{% static 'js/revolution.extension.carousel.min.js' %}"></script>
+    <script src="{% static 'js/revolution.extension.kenburn.min.js' %}"></script>
+    <script src="{% static 'js/revolution.extension.layeranimation.min.js' %}"></script>
+    <script src="{% static 'js/revolution.extension.migration.min.js' %}"></script>
+    <script src="{% static 'js/revolution.extension.navigation.min.js' %}"></script>
+    <script src="{% static 'js/revolution.extension.parallax.min.js' %}"></script>
+    <script src="{% static 'js/revolution.extension.slideanims.min.js' %}"></script>
+    <script src="{% static 'js/revolution.extension.video.min.js' %}"></script>
+
+    <!-- fancy box -->
+    <script src="{% static 'js/jquery.fancybox.pack.js' %}"></script>
+    <script src="{% static 'js/isotope.js' %}"></script>
+    <script src="{% static 'js/jquery.polyglot.language.switcher.js' %}"></script>
+    <script src="{% static 'js/nouislider.js' %}"></script>
+    <script src="{% static 'js/jquery.bootstrap-touchspin.js' %}"></script>
+    <script src="{% static 'js/SmoothScroll.js' %}"></script>
+    <script src="{% static 'js/jquery.appear.js' %}"></script>
+    <script src="{% static 'js/jquery.countTo.js' %}"></script>
+    <script src="{% static 'js/jquery.flexslider.js' %}"></script>
+    <script src="{% static 'js/imagezoom.js' %}"></script> 
+    <script src="{% static 'js/bxslider.js' %}"></script> 
+    <script id="map-script" src="{% static 'js/default-map.js' %}"></script>
+    <script src="{% static 'js/custom.js' %}"></script>
+
+</div>
+    
+</body>
+</html>

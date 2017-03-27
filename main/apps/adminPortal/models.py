@@ -28,6 +28,14 @@ class SubCompany(models.Model):
 	storage_cold = models.FloatField(null = True, blank = True, default = 0.00)
 	zip_service = models.ManyToManyField(Zips)
 	drayage = models.FloatField(null=True, blank=True, default=0.00)
+	contact_fname = models.CharField(max_length=40, default='', null=True)
+	contact_lname = models.CharField(max_length=60, default='', null=True)
+	street_address = models.CharField(max_length=200, null=True)
+	state = models.CharField(max_length=40, null=True)
+	zipcode = models.CharField(max_length=30, null=True)
+	city = models.CharField(max_length=100, null=True)
+
+
 
 
 

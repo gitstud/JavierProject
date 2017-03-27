@@ -34,9 +34,9 @@
             <div class="clearfix">
                 <div class="pull-left">
                     <ul class="list-inline link-list">
-                        <li>Company Information<a href="index.html"></a></li>
-                        <li><a href="shop.html">Shipping Information</a></li>
-                        <li><a href="#">Link Accounts</a></li>
+                        <li><a href="#">Company Information</a></li>
+                        <li><a href="#">Shipping Information</a></li>
+                        <li>Link Accounts<a href="#"></a></li>
                         <li style="color:black;">Review</li>
                     </ul>
                 </div>
@@ -60,20 +60,21 @@
                 
                 <!--Login Form-->
                 <div class="styled-form login-form">
-                        <form class="well form-horizontal" action=" " method="post"  id="contact_form">
+                        <form class="well form-horizontal" action="{% url 'account:registerD' company.id %}" method="post"  id="contact_form">
+                        {% csrf_token %}
                     <fieldset>
 
                     <!-- Form Name -->
-                    <legend>Point of Contact</legend>
+                    <legend>Banking</legend>
 
                     <!-- Text input-->
 
                     <div class="form-group">
-                      <label class="col-md-4 control-label"><span>Point of Contact: </span>First Name</label>  
+                      <label class="col-md-4 control-label">Name of Bank</label>  
                       <div class="col-md-4 inputGroupContainer">
                       <div class="input-group">
-                      <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                      <input  name="first_name" placeholder="First Name" class="form-control"  type="text">
+                      <span class="input-group-addon"><i class="fa fa-university"></i></span>
+                      <input  name="bank_name" placeholder="Bank Name" class="form-control"  type="text">
                         </div>
                       </div>
                     </div>
@@ -86,17 +87,6 @@
                         <div class="input-group">
                       <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
                       <input name="last_name" placeholder="Last Name" class="form-control"  type="text">
-                        </div>
-                      </div>
-                    </div>
-
-                    <!-- Text input-->
-                           <div class="form-group">
-                      <label class="col-md-4 control-label">E-Mail</label>  
-                        <div class="col-md-4 inputGroupContainer">
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-                      <input name="email" placeholder="E-Mail Address" class="form-control"  type="text">
                         </div>
                       </div>
                     </div>
@@ -215,22 +205,12 @@
                     </div>
                     </div>
 
-                    <!-- Text input-->
-                    <div class="form-group">
-                      <label class="col-md-4 control-label">Website or domain name</label>  
-                       <div class="col-md-4 inputGroupContainer">
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="glyphicon glyphicon-globe"></i></span>
-                      <input name="website" placeholder="Website or domain name" class="form-control" type="text">
-                        </div>
-                      </div>
-                    </div>
 
                     <!-- Button -->
                     <div class="form-group">
                       <label class="col-md-4 control-label"></label>
                       <div class="col-md-4">
-                        <button type="submit" class="btn btn-warning" >Send <span class="glyphicon glyphicon-send"></span></button>
+                        <button type="submit" class="btn btn-primary" >Next</button>
                       </div>
                     </div>
 
@@ -246,7 +226,7 @@
 
 
      <!--Footer Bottom-->
-     <section class="footer-bottom navbar navbar-fixed-bottom">
+     <section class="footer-bottom">
         <div class="container">
             <div class="pull-left copy-text">
                 <p>Copyrights © 2017 All Rights Reserved. Powered by  <a href="#"> Connectly.</a></p>
@@ -265,9 +245,7 @@
 </footer>
 
 <!-- Scroll Top Button -->
-    <button class="scroll-top tran3s color2_bg">
-        <span class="fa fa-angle-up"></span>
-    </button>
+
     <!-- pre loader  -->
     <div class="preloader"></div>
 
