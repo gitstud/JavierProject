@@ -5,6 +5,7 @@ __pycache__/
 *.pyc
 *.pyo
 Jenv/
+settings.py
 
 # C extensions
 *.so
