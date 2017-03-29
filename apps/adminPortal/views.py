@@ -1,10 +1,13 @@
-from django.shortcuts import render, redirect, reverse
-from models import User, SubCompany
+from django.shortcuts import render, redirect, reverse, HttpResponse
+from models import User, SubCompany, Zips
 import json
 
 # Create your views here.
 def portal(request):
 	return render(request, 'adminPortal/registerA.html')
+
+def fportal(request):
+	return render(request, 'adminPortal/fregisterA.html')
 
 def validateAdmin(request):
 	print(request.POST['userEmail'])
@@ -18,33 +21,35 @@ def validateAdmin(request):
 		print('################')
 	return redirect('account:b_dash')
 
-def b_dash(request):
-	return render(request, 'adminPortal/businessDashboard.html')
-
+# login or register page
 def RegisterA(request):
-	company = SubCompany(name=request.POST['cname'], email=request.POST['cemail'], password=request.POST['cpass'])
-	company.save()
-	return redirect(reverse('account:registerB', args=(company.id,)))
+	company = SubCompany.objects.validateA(name=request.POST['cname'], email=request.POST['cemail'], password=request.POST['cpass'], cpassword=request.POST['ccpass'], request=request)
+	print('$$$$$$$$$$$', company)
+	if company == False:
+		return redirect('account:admin_portal')
+	else:
+		return redirect(reverse('account:registerB', args=(company.id,)))
 
+# company information page
 def RegisterB(request, company):
 	a = SubCompany.objects.get(id=company)
-	context = {'company':a}
+	context = {'company':a.name, 'id':a.id}
 	return render(request, 'adminPortal/registerB.html', context)
 
+# shipping information page
 def RegisterC(request, company):
-	a = SubCompany.objects.get(id=company)
-	a.contact_fname = request.POST['first_name']
-	a.contact_lname = request.POST['last_name']
-	a.phone = request.POST['phone']
-	a.street_address = request.POST['address']
-	a.city = request.POST['city']
-	a.state = request.POST['state']
-	a.zipcode = request.POST['zip']
-	a.save()
-	context = {'company':a}
-	return render(request, 'adminPortal/registerC.html', context)
+	x = request.POST
+	vComp = SubCompany.objects.validateB(id=company, fname=x['first_name'], lname=x['last_name'], phone=x['phone'], stradd=x['address'], city=x['city'], state=x['state'], zipcode=x['zip'], request=request)
+	if vComp == False:
+		a = SubCompany.objects.get(id=company)
+		return redirect(reverse('account:registerB', args=(a.id,)))
+	else:
+		context = {'company':vComp.name, 'id':vComp.id}
+		return render(request, 'adminPortal/registerC.html', context)
 
+# bank accounts /skip for now/
 def RegisterD(request, company):
+	print('$$$$$$$',request.POST['zip'])
 	a = SubCompany.objects.get(id=company)
 	a.free_time = float(request.POST['free_time'])
 	a.stop_charges = float(request.POST['stop_charges'])
@@ -55,11 +60,22 @@ def RegisterD(request, company):
 	a.save()
 	print(a.storage_cold)
 	zips = request.POST['zip'].split()
-	print(zips)
+	
+	return redirect(reverse('account:registerC', args=(company.id,)))
 
-	context = {'company':a}
-	return render(request, 'adminPortal/registerD.html', context)
+def RegisterReview(request, company):
+	print(request.POST['zip'])
+	x = request.POST
 
+	a = SubCompany.objects.validateC(id=company,ftime=x['free_time'],scharge=x['stop_charges'],estop=x['exam_stop'],fcharge=x['fuel_surcharge'],sdry=x['storage_dry'],scold=x['storage_cold'],zipcodes=x['zip'],request=request)
+
+	# if we need to go back run this
+	# return redirect(reverse('account:registerC', args=(a.id,)))
+	return render(request, 'adminPortal/registerReview.html', {'company':a})
+
+def b_dash(request, company):
+	company = SubCompany.objects.get(id=company)
+	return render(request, 'adminPortal/businessDashboard.html', {'company':company})
 
 
 

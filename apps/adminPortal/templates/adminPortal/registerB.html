@@ -27,8 +27,9 @@
 
 <div class="inner-banner text-center">
     <div class="container">
-        <div class="box">
-            <h3>Welcome, {{company.name}}</h3>
+        <div class="box" style="background-color: #E3F8FF; border: 10px solid #48c7ec; border-top: none;">
+            <h3>Welcome, {{company}}</h3>
+
         </div><!-- /.box -->
         <div class="breadcumb-wrapper">
             <div class="clearfix">
@@ -36,7 +37,7 @@
                     <ul class="list-inline link-list">
                         <li>Company Information<a href="#"></a></li>
                         <li><a href="#">Shipping Information</a></li>
-                        <li><a href="#">Link Accounts</a></li>
+                       <!--  <li><a href="#">Link Accounts</a></li> -->
                         <li style="color:black;">Review</li>
                     </ul>
                 </div>
@@ -49,8 +50,6 @@
 </div>
 
 
-
-
 <section class="register-section sec-padd-top">
     <div class="container">
         <div class="row">
@@ -60,12 +59,23 @@
                 
                 <!--Login Form-->
                 <div class="styled-form login-form">
-                        <form class="well form-horizontal" action="{% url 'account:registerC' company.id %}" method="post"  id="contact_form">
+                        <form class="well form-horizontal" action="{% url 'account:registerC' id %}" method="post"  id="contact_form">
                         {% csrf_token %}
                     <fieldset>
 
                     <!-- Form Name -->
                     <legend>Contact Info</legend>
+
+
+                    <div class="text-center">
+                   {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+                    <li style="color: red;" {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+                </div>
 
                     <!-- Text input-->
 
@@ -99,8 +109,9 @@
                         <div class="col-md-4 inputGroupContainer">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
-                      <input name="phone" placeholder="(845)555-1212" class="form-control" type="text">
+                      <input name="phone" placeholder="(555)555-5555" class="form-control" type="text" {{ value|phone2numeric }}>
                         </div>
+                      
                       </div>
                     </div>
 

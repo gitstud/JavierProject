@@ -137,13 +137,7 @@
                     <h3>Register Now</h3>
                     <div class="decor"></div>
                 </div>
-                {% if messages %}
-                <ul class="messages">
-                    {% for message in messages %}
-                    <li style="color: red;" {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-                    {% endfor %}
-                </ul>
-                {% endif %}
+                
                 <!--Login Form-->
                 <div class="styled-form register-form">
                     <form method="post" action="{% url 'account:registerA' %}">
@@ -163,6 +157,11 @@
                         <div class="form-group">
                             <span class="adon-icon"><span class="fa fa-unlock-alt"></span></span>
                             <input type="password" name="ccpass" value="" placeholder="Confirm Password">
+                        </div>
+                        <div class="form-group">
+                            <span class="adon-icon"><span class="fa fa-unlock-alt"></span></span>
+                            <label class="radio-inline"><input type="radio" value="big" name="ctype">Border</label>
+                            <label class="radio-inline"><input type="radio" value="small" name="ctype">Local</label>
                         </div>
                         <div class="clearfix">
                             <div class="form-group pull-left">

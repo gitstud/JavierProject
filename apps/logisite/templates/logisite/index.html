@@ -66,12 +66,12 @@
 <section class="theme_menu stricky">
     <div class="container">
         <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-3 col-sm-3">
                 <div class="main-logo">
                     <a href="index.html"><img src="{% static 'images/logo/logo.png' %}" alt=""></a>
                 </div>
             </div>
-            <div class="col-md-8 menu-column">
+            <div class="col-md-9 col-sm-9 menu-column">
                 <nav class="menuzord" id="main_menu">
                    <ul class="menuzord-menu">
                         <li class="active"><a href="index.html">Home</a></li>
@@ -96,25 +96,13 @@
                          </ul>
                             
                         </li>
-                      
+
+                        <li><a href="{% url 'account:fadmin_portal' %}">Freight Forwarders</a></li>
+                        <li><a href="{% url 'account:admin_portal' %}">Carriers</a></li>
+
                         <li><a href="contact.html">Contact us</a></li>
-                        <li><a href="{% url 'account:admin_portal' %}">Login | Register</a></li>
                     </ul><!-- End of .menuzord-menu -->
                 </nav> <!-- End of #main_menu -->
-            </div>
-            <div class="right-column">
-                <div class="right-area">
-                    <div class="nav_side_content">
-                        <div class="search_option">
-                            <button class="search tran3s dropdown-toggle color1_bg" id="searchDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-search" aria-hidden="true"></i></button>
-                            <form action="#" class="dropdown-menu" aria-labelledby="searchDropdown">
-                                <input type="text" placeholder="Search...">
-                                <button><i class="fa fa-search" aria-hidden="true"></i></button>
-                            </form>
-                       </div>
-                   </div>
-                </div>
-                    
             </div>
         </div>
                 

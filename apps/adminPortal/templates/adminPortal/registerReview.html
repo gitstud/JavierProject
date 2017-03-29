@@ -56,109 +56,101 @@
             
             <!--Form Column-->
             <div class="form-column column col-md-12 col-sm-12 col-xs-12">
+            <div class="text-center">
+                            <h1>Account Review</h1>
+                        </div>
                 
                 <!--Login Form-->
                 <div class="styled-form login-form">
-                        <form class="well form-horizontal" action="{% url 'account:registerReview' id %}" method="post"  id="contact_form">
+                        <form class="well form-horizontal" action="{% url 'account:b_dash' company.id %}" method="post"  id="contact_form">
                         {% csrf_token %}
+                        
                     <fieldset>
+
+                    <legend>Contact Info</legend>
+
+                    <!-- Text input-->
+
+
+                    <div class="form-group">
+                      <label class="col-md-5 control-label">First Name:</label> 
+                      <label class="control-label">{{company.contact_fname}}</label>  
+                    </div>
+
+                    <div class="form-group">
+                      <label class="col-md-5 control-label">Last Name:</label> 
+                      <label class="control-label">{{company.contact_lname}}</label>  
+                    </div>
+
+                    <div class="form-group">
+                      <label class="col-md-5 control-label">Phone:</label> 
+                      <label class="control-label">{{company.phone}}</label>  
+                    </div>
+
+                    <div class="form-group">
+                      <label class="col-md-5 control-label">Address:</label> 
+                      <label class="control-label">{{company.street_address}}</label>  
+                    </div>
+                        
+                    <div class="form-group">
+                      <label class="col-md-5 control-label">City:</label> 
+                      <label class="control-label">{{company.city}}</label>  
+                    </div>
+
+                    <div class="form-group">
+                      <label class="col-md-5 control-label">State:</label> 
+                      <label class="control-label">{{company.state}}</label>  
+                    </div>
+
+                    <div class="form-group">
+                      <label class="col-md-5 control-label">Zip:</label> 
+                      <label class="control-label">{{company.zipcode}}</label>  
+                    </div>
 
                     <!-- Form Name -->
                     <legend>Service Fees</legend>
 
-                <div class="text-center">
-                   {% if messages %}
-                <ul class="messages">
-                    {% for message in messages %}
-                    <li style="color: red;" {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-                    {% endfor %}
-                </ul>
-                {% endif %}
-                </div>
-
                     <!-- Text input-->
 
                     <div class="form-group">
-                      <label class="col-md-4 control-label">Free Time</label>  
-                      <div class="col-md-4 inputGroupContainer">
-                      <div class="input-group">
-                      <span class="input-group-addon"><i class="fa fa-usd"></i></span>
-                      <input  name="free_time" placeholder="00.00" class="form-control"  type="text">
-                        </div>
-                      </div>
+                      <label class="col-md-5 control-label">Free Time:</label> 
+                      <label class="control-label">{{company.free_time}}</label>  
                     </div>
 
-                    <!-- Text input-->
-
                     <div class="form-group">
-                      <label class="col-md-4 control-label" >Stop Charges</label> 
-                        <div class="col-md-4 inputGroupContainer">
-                        <div class="input-group">
-                      <span class="input-group-addon"><i class="fa fa-usd"></i></span>
-                      <input name="stop_charges" placeholder="00.00" class="form-control"  type="text">
-                        </div>
-                      </div>
+                      <label class="col-md-5 control-label">Stop Charges:</label> 
+                      <label class="control-label">{{company.stop_charges}}</label>  
                     </div>
 
-
-                    <!-- Text input-->
-                           
                     <div class="form-group">
-                      <label class="col-md-4 control-label">Exam Stop</label>  
-                        <div class="col-md-4 inputGroupContainer">
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-usd"></i></span>
-                      <input name="exam_stop" placeholder="00.00" class="form-control" type="text">
-                        </div>
-                      </div>
+                      <label class="col-md-5 control-label">Exam Stop:</label> 
+                      <label class="control-label">{{company.exam_stop}}</label>  
                     </div>
 
-                    <!-- Text input-->
-                          
                     <div class="form-group">
-                      <label class="col-md-4 control-label">Fuel Surcharge</label>  
-                        <div class="col-md-4 inputGroupContainer">
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-usd"></i></span>
-                      <input name="fuel_surcharge" placeholder="00.00" class="form-control" type="text">
-                        </div>
-                      </div>
+                      <label class="col-md-5 control-label">Fuel Surcharge:</label> 
+                      <label class="control-label">{{company.fuel_surcharge}}</label>  
                     </div>
 
-                    <!-- Text input-->
-                     
                     <div class="form-group">
-                      <label class="col-md-4 control-label">Storage Dry</label>  
-                        <div class="col-md-4 inputGroupContainer">
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-usd"></i></span>
-                      <input name="storage_dry" placeholder="00.00" class="form-control"  type="text">
-                        </div>
-                      </div>
+                      <label class="col-md-5 control-label">Storage Dry:</label> 
+                      <label class="control-label">{{company.storage_dry}}</label>  
+                    </div>
+
+                    <div class="form-group">
+                      <label class="col-md-5 control-label">Storage Cold:</label> 
+                      <label class="control-label">{{company.storage_cold}}</label>  
                     </div>
 
                     <!-- Select Basic -->
                        
-                    <div class="form-group"> 
-                      <label class="col-md-4 control-label">Storage Cold</label>
-                        <div class="col-md-4 selectContainer">
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-usd"></i></span>
-                       <input name="storage_cold" placeholder="00.00" class="form-control"  type="text">
-                      </div>
-                    </div>
-                    </div>
-
-                    <!-- Text input-->
-
                     <div class="form-group">
-                      <label class="col-md-4 control-label">Zip Codes Serviced (seperate by spaces only)</label>  
-                        <div class="col-md-4 inputGroupContainer">
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-truck"></i></span>
-                      <input name="zip" placeholder="90038 90039 90040" class="form-control"  type="text"> {{ value|make_list }}
-                        </div>
-                    </div>
+                      <label class="col-md-5 control-label">Zip Codes Serviced:</label> 
+                      <label class="control-label">
+                      {% for i in company.zip_service.all %}
+                      <span>{{i.zipcode}}, </span>
+                      {% endfor %}
+                      </label>  
                     </div>
 
 
@@ -166,7 +158,7 @@
                     <div class="form-group">
                       <label class="col-md-4 control-label"></label>
                       <div class="col-md-4">
-                        <button type="submit" class="btn btn-primary" >Next</button>
+                        <button type="submit" class="btn btn-primary" >Finished</button>
                       </div>
                     </div>
 
