@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>The Experts || Responsive HTML 5 Template</title> 
+
+    <!-- mobile responsive meta -->
+    {% load static %}
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'images/fav-icon/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" href="{% static 'images/fav-icon/favicon-32x32.png' %}" sizes="32x32">
+    <link rel="icon" type="image/png" href="{% static 'images/fav-icon/favicon-16x16.png' %}" sizes="16x16">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bdash.css' %}">
+
+</head>
+<body>
+
+<div class="boxed_wrapper">
+
+
+
+<section class="theme_menu stricky">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="main-logo">
+                    <a href="index.html"><img src="{% static 'images/logo/logo.png' %}" alt=""></a>
+                </div>
+            </div>
+            <div class="col-md-6 col-md-offset-2 menu-column">
+                <nav class="menuzord" id="main_menu">
+                   <ul class="menuzord-menu">
+                        <li class="active"><a href="index.html">Dashboard</a></li>
+
+
+                        <li><a href="service.html">account</a>
+                        <ul class="dropdown">
+                            <li><a href="service-1.html">Profile</a></li>
+                            <li><a href="service-2.html">Stats</a></li>
+                            <li><a href="service-6.html">Settings</a></li>
+                         </ul>
+                            
+                        </li>
+                      
+                    </ul><!-- End of .menuzord-menu -->
+                </nav> <!-- End of #main_menu -->
+            </div>
+             <div class="right-column">
+             <div class="right-area float-right right-column">
+                    <div class="nav_side_content">
+                        <div class="">
+                            <ul class="">
+                    <li><a href="#">Logout</a></li>
+                </ul>
+                       </div>
+                   </div>
+                </div>
+               
+            </div>
+
+        </div>
+                
+
+   </div> <!-- End of .conatiner -->
+</section>
+  
+
+
+<section class="whychoos-us sec-padd2">
+    <div class="container">
+        
+        <div class="section-title center">
+            <h2>Clients</h2>
+            <div class="table" style="margin-top: 30px;">
+            
+                <div id="table">
+                    <div class="header-row row">
+                    <span class="cell primary">Vehcile</span>
+                    <span class="cell">Exterior</span>
+                     <span class="cell">Interior</span>
+                    <span class="cell">Engine</span>
+                    <span class="cell">Trans</span>
+                  </div>
+                  <div class="row">
+                    <input type="radio" name="expand">
+                    <span class="cell primary" data-label="Vehicle">2013 Subaru WRX</span>
+                    <span class="cell" data-label="Exterior">World Rally Blue</span>
+                     <span class="cell" data-label="Interior">Black</span>
+                     <span class="cell" data-label="Engine">2.5L H4 Turbo</span>
+                    <span class="cell" data-label="Trans"><a href="">5 Speed</a></span>
+                  </div>
+                  
+                  <div class="row">
+                        <input type="radio" name="expand">
+                      <span class="cell primary" data-label="Vehicle">
+                        <button onclick="alert()" class="buttonNew">New Entry</button>
+                    </span>
+                  </div>
+
+
+
+
+
+            </div>
+        </div>
+            
+        
+        
+            
+    </div>
+</section>
+
+
+<div class="container"><div class="border-bottom"></div></div>
+
+
+
+<footer class="main-footer">
+     
+     <!--Footer Bottom-->
+     <section class="footer-bottom">
+        <div class="container">
+            <div class="pull-left copy-text">
+                <p>Copyrights © 2017 All Rights Reserved. Powered by  <a href="#"> Connectly.</a></p>
+                
+            </div><!-- /.pull-right -->
+            <div class="pull-right get-text">
+                <ul>
+                    <li><a href="#">Support |  </a></li>
+                    <li><a href="#">Privacy &amp; Policy |</a></li>
+                    <li><a href="#"> Terms &amp; Conditions</a></li>
+                </ul>
+            </div><!-- /.pull-left -->
+        </div><!-- /.container -->
+    </section>
+     
+</footer>
+
+<!-- Scroll Top Button -->
+    <button class="scroll-top tran3s color2_bg">
+        <span class="fa fa-angle-up"></span>
+    </button>
+    <!-- pre loader  -->
+    <div class="preloader"></div>
+
+
+    <!-- jQuery js -->
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <!-- bootstrap js -->
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <!-- jQuery ui js -->
+    <script src="{% static 'js/jquery-ui.js' %}"></script>
+    <!-- owl carousel js -->
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+    <!-- jQuery validation -->
+    <script src="{% static 'js/jquery.validate.min.js' %}"></script>
+
+    <!-- mixit up -->
+    <script src="{% static 'js/wow.js' %}"></script>
+    <script src="{% static 'js/jquery.mixitup.min.js' %}"></script>
+    <script src="{% static 'js/jquery.fitvids.js' %}"></script>
+    <script src="{% static 'js/bootstrap-select.min.js' %}"></script>
+    <script src="{% static 'js/menuzord.js' %}"></script>
+
+    <!-- revolution slider js -->
+    <script src="{% static 'js/jquery.themepunch.tools.min.js' %}"></script>
+    <script src="{% static 'js/jquery.themepunch.revolution.min.js' %}"></script>
+    <script src="{% static 'js/revolution.extension.actions.min.js' %}"></script>
+    <script src="{% static 'js/revolution.extension.carousel.min.js' %}"></script>
+    <script src="{% static 'js/revolution.extension.kenburn.min.js' %}"></script>
+    <script src="{% static 'js/revolution.extension.layeranimation.min.js' %}"></script>
+    <script src="{% static 'js/revolution.extension.migration.min.js' %}"></script>
+    <script src="{% static 'js/revolution.extension.navigation.min.js' %}"></script>
+    <script src="{% static 'js/revolution.extension.parallax.min.js' %}"></script>
+    <script src="{% static 'js/revolution.extension.slideanims.min.js' %}"></script>
+    <script src="{% static 'js/revolution.extension.video.min.js' %}"></script>
+
+    <!-- fancy box -->
+    <script src="{% static 'js/jquery.fancybox.pack.js' %}"></script>
+    <script src="{% static 'js/jquery.polyglot.language.switcher.js' %}"></script>
+    <script src="{% static 'js/nouislider.js' %}"></script>
+    <script src="{% static 'js/jquery.bootstrap-touchspin.js' %}"></script>
+    <script src="{% static 'js/SmoothScroll.js' %}"></script>
+    <script src="{% static 'js/jquery.appear.js' %}"></script>
+    <script src="{% static 'js/jquery.countTo.js' %}"></script>
+    <script src="{% static 'js/jquery.flexslider.js' %}"></script>
+    <script src="{% static 'js/imagezoom.js' %}"></script> 
+    <script id="map-script" src="{% static 'js/default-map.js' %}"></script>
+    <script src="{% static 'js/custom.js' %}"></script>
+
+</div>
+    
+</body>
+</html>

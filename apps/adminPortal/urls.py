@@ -15,7 +15,6 @@ urlpatterns = [
 	#carrier registration review
 	url(r'register/review/(?P<company>\d+)/$', views.RegisterReview, name='registerReview'),
 	url(r'^admin_validate$', views.validateAdmin, name='admin_validate'),
-	url(r'^business_dashboard/(?P<company>\d+)/$', views.b_dash, name='b_dash'),
 	#forward register/login
 	url(r'^login$', views.fportal, name='fadmin_portal'),
 ]

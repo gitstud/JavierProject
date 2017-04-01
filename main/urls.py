@@ -19,4 +19,5 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^', include('apps.logisite.urls', namespace='main')),
     url(r'^account/', include('apps.adminPortal.urls', namespace='account')),
+    url(r'^carrier/', include('apps.carrier.urls', namespace='carrier')),
 ]

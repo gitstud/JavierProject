@@ -31,7 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-'apps.logisite', 'apps.adminPortal',
+'apps.logisite', 'apps.adminPortal', 'apps.carrier',
 'django.contrib.admin',
 'django.contrib.auth',
 'django.contrib.contenttypes',

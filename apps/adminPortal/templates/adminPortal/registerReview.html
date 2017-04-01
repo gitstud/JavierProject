@@ -62,7 +62,7 @@
                 
                 <!--Login Form-->
                 <div class="styled-form login-form">
-                        <form class="well form-horizontal" action="{% url 'account:b_dash' company.id %}" method="post"  id="contact_form">
+                        <form class="well form-horizontal" action="{% url 'carrier:dash' company.id %}" method="post"  id="contact_form">
                         {% csrf_token %}
                         
                     <fieldset>

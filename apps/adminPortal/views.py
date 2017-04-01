@@ -73,9 +73,6 @@ def RegisterReview(request, company):
 	# return redirect(reverse('account:registerC', args=(a.id,)))
 	return render(request, 'adminPortal/registerReview.html', {'company':a})
 
-def b_dash(request, company):
-	company = SubCompany.objects.get(id=company)
-	return render(request, 'adminPortal/businessDashboard.html', {'company':company})
 
 
 

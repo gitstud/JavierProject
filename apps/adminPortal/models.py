@@ -120,7 +120,6 @@ class SubManager(models.Manager):
 				check = Zips.objects.get(zipcode=item)
 				a.zip_service.add(check)
 			except:
-				check = Zips.objects.get(zipcode=item)
 				b = Zips(zipcode=item)
 				b.save()
 				a.zip_service.add(b)
